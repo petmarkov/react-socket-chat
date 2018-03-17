@@ -1,0 +1,5 @@
+# client dependencies
+/node_modules
+
+# server dependencies
+/chat-server/node_modules
