@@ -4,7 +4,7 @@
 Chat built with React with Redux and Bootstrap on the front-end and Node and Socket.io on the back-end
 
 
-![Alt Text](https://media.giphy.com/media/ZNKdLghErvHtPhAscs/giphy.gif)
+![Alt Text](https://media.giphy.com/media/LZ4Bns56kUk5xCrqNW/giphy.gif)
 
 ## Installing and Running Locally  
 
