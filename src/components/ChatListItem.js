@@ -20,7 +20,6 @@ const ChatListItem = ({chat, onClick, active}) => {
                     </div>
                 }
             </div>
-            // show the truncated preview of the last message
             <p className="mb-1 text-truncate">{chat.messages[chat.messages.length - 1].message}</p>
         </a>
     );
