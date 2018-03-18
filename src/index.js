@@ -6,6 +6,7 @@ import io from "socket.io-client";
 
 import AppContainer from "./containers/AppContainer";
 import reducer from "./reducers/reducer";
+import { userRegister, newChat, newMessage, endChat } from "./actions/index";
 
 // export to be exposed to components that register user and send messages
 export const socket = io("http://localhost:3001");
@@ -54,38 +55,20 @@ const store = createStore(
 // Register socket with all events
 
 socket.on("USER_REGISTER", (clientID) => {
-    store.dispatch({
-        type: "USER_REGISTER",
-        clientID: clientID
-    })
+    store.dispatch(userRegister(clientID));
 });
 
 socket.on("CHAT_ADD", (chat) => {
-    store.dispatch({
-        type: "CHAT_ADD",
-        chatID: chat.chatID,
-        nickname: chat.nickname
-    })
+    store.dispatch(newChat(chat.chatID, chat.nickname));
 });
 
-socket.on("CHAT_END", (chat) => {
-    store.dispatch({
-        type: "CHAT_END",
-        chatID: chat
-    })
+socket.on("MESSAGE_ADD", (msg) => {
+    store.dispatch(newMessage(msg.chatID, msg.clientOrigin, msg.body));
 });
 
-socket.on("MESSAGE_ADD", (message) => {
-    store.dispatch({
-        type: "MESSAGE_ADD",
-        chatID: message.chatID,
-        message: {
-            message: message.body,
-            clientOrigin: message.clientOrigin
-        }
-    })
+socket.on("CHAT_END", (chatID) => {
+    store.dispatch(endChat(chatID));
 });
-
 
 render(
     <Provider store = {store}>

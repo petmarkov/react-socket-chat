@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 
 import ChatList from "../components/ChatList";
+import { switchChat } from "../actions/index";
 
 const getChats = (chatHash, chats, filter) => {
     let chatList = chatHash.map((id) => { return  {...chats[id], id: id} });
@@ -19,7 +20,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        onChatClick: id => dispatch({type: "CHAT_SWITCH", chatID: id})
+        onChatClick: id => dispatch(switchChat(id))
     }
 }
 
