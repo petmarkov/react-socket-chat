@@ -70,6 +70,22 @@ body {
     margin: auto;
 }
 
+.list-avatar{
+    height: 60px;
+    width: 60px;
+    border: double 4px transparent;
+    background-clip: content-box, border-box;
+    background-origin: border-box;
+}
+
+.list-avatar.active{
+    background-image: linear-gradient(white, white), radial-gradient(circle at top left,#634bed, #609bfc);
+}
+
+.list-avatar.inactive{
+    background-image: linear-gradient(white, white), radial-gradient(circle at top left,#7b63d4, #ec54ac);
+}
+
 .mars {
     width: 100wh;
     height: 90vh;
