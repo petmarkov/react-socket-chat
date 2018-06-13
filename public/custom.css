@@ -97,6 +97,10 @@ body {
     animation: Gradient 15s ease infinite;
 }
 
+.avatar{
+    height: 55px;
+}
+
 @-webkit-keyframes Gradient {
 	0% {
 		background-position: 0% 50%
