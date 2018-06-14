@@ -13,7 +13,7 @@ class ChatFrame extends React.Component{
         return (
             <div className="card h-100">
                 <div className="card-header text-center">
-                    <h5 className="m-0" >{this.props.activeChat}</h5>
+                    <h5 className="m-0 font-weight-bold" >{this.props.activeChat}</h5>
                 </div>
                 <div className="card-body scrollable w-100" ref={(node) => {this.messageContainer = node}} >
                     {
